@@ -21,8 +21,8 @@ source ~/.bashrc
 ### 2. Clone and build
 
 ```bash
-git clone git@github.com:YOURUSERNAME/embedded-arm.git
-cd embedded-arm
+git clone git@github.com:jmarc101/embedded-ARM.git
+cd embedded-ARM
 pio run
 ```
 
