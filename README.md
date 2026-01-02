@@ -8,9 +8,11 @@ Bare-metal ARM development following embedded systems fundamentals.
 
 ### 1. Install PlatformIO CLI
 
+https://docs.platformio.org/en/stable/core/installation/methods/installer-script.html
+
 ```bash
 # Install
-curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py -o get-platformio.py
+curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
 python3 get-platformio.py
 
 # Add to PATH
