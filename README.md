@@ -33,7 +33,7 @@ python3 get-platformio.py
 echo 'export PATH="$HOME/.platformio/penv/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
 
 # Build & upload
-git clone git@github.com:jmarc101/embedded-ARM.git && cd embedded-ARM
+git clone https://github.com/jmarc101/embedded-ARM.git
 pio run -t upload
 
 # Serial monitor
