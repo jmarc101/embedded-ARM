@@ -103,7 +103,7 @@ pio device monitor
 ```bash
 cd projects
 mkdir 03-new-project && cd 03-new-project
-pio project init --board nucleo_f446re --project-option "framework="
+pio project init --board nucleo_f446re --project-option "framework=cmsis"
 ```
 
 ## Projects
