@@ -23,6 +23,8 @@ void delay(volatile uint32_t count) {
  * main() - Application entry point
  */
 int main(void) {
+    int counter = 0;
+
     // 1. Enable GPIOA clock
     //    RCC = Reset and Clock Control
     //    AHB1ENR = AHB1 peripheral clock enable register
@@ -39,11 +41,25 @@ int main(void) {
     GPIOA->MODER &= ~GPIO_MODER_MODER5;      // Clear bits [11:10]
     GPIOA->MODER |= GPIO_MODER_MODER5_0;     // Set bit 10 (01 = output)
     
-    // 3. Blink LED forever
+    // 3. Blink LED forever w
     while (1) {
-        // ODR = Output Data Register
-        // OD5 = Output data bit 5 (corresponds to PA5)
-        GPIOA->ODR ^= GPIO_ODR_OD5;          // Toggle PA5
-        delay(100000);                       // Delay
+        int second_in_ms = 1000000;
+        counter++;
+
+        for (int i = 0; i<=counter; i++){
+            // Calculate delay time
+            // Decrease delay time with each iteration but more toggles
+            int loop_delay = second_in_ms - counter * 100000;
+
+            // ODR = Output Data Register
+            // OD5 = Output data bit 5 (corresponds to PA5)
+            GPIOA->ODR ^= GPIO_ODR_OD5;      // Toggle PA5
+            delay(loop_delay);               // Delay
+
+        }
+
+        if (counter == 9){
+            counter = 0;
+        }
     }
 }
